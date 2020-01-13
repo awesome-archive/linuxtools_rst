@@ -20,7 +20,7 @@ find 文件查找
 
 正则方式查找.txt和pdf::
 
-    find . -regex  ".*\(\.txt|\.pdf\)$"
+    find . -regex  ".*\(\.txt\|\.pdf\)$"
 -iregex： 忽略大小写的正则
 
 否定参数 ,查找所有非txt文本::
@@ -66,7 +66,7 @@ file命令可以检查文件具体类型（二进制或文本）::
     find . -atime -7 -type f -print
 查询7天前被访问过的所有文件::
 
-    find . -atime +7 type f -print
+    find . -atime +7 -type f -print
 
 - 按大小搜索：
 w字 k M G
@@ -268,7 +268,7 @@ cut 按列切分文本
 - -d 指定定界符
 ::
 
-    cat -f2 -d";" filename
+    cut -f2 -d";" filename
 - cut 取的范围
     * N- 第N个字段到结尾
     * -M 第1个字段为M
@@ -348,7 +348,7 @@ sed 文本替换利器
 已匹配的字符串通过标记&来引用.
 ::
 
-	echo this is en example | sed 's/\w+/[&]/g'
+	echo this is en example | sed 's/\w\+/[&]/g'
 	$>[this]  [is] [en] [example]
 
 
